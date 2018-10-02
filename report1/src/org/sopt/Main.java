@@ -8,23 +8,28 @@ import org.sopt.model.builder.UniversityBuilder;
 
 public class Main {
     public static void main(String[] args) {
+        final StudentBuilder studentBuilder = new StudentBuilder();
+        final ProfessorBuilder professorBuilder = new ProfessorBuilder();
+        final DepartmentBuilder departmentBuilder = new DepartmentBuilder();
+        final UniversityBuilder universityBuilder = new UniversityBuilder();
+
         // 학생리스트
         new DefaultArrayList<Student>()
-                .addEntity(new StudentBuilder()
+                .addEntity(studentBuilder
                         .setIdx(1)
                         .setName("권현아1")
                         .setGrade(4)
                         .setDepartmentByName("컴퓨터공학과")
                         .setStudentType(StudentType.getByName("재학"))
                         .build())
-                .addEntity(new StudentBuilder()
+                .addEntity(studentBuilder
                         .setIdx(2)
                         .setName("권현아2")
                         .setGrade(4)
                         .setDepartmentByName("컴퓨터공학과")
                         .setStudentType(StudentType.getByName("휴학"))
                         .build())
-                .addEntity(new StudentBuilder()
+                .addEntity(studentBuilder
                         .setIdx(1)
                         .setName("권현아3")
                         .setGrade(4)
@@ -35,19 +40,19 @@ public class Main {
 
         // 교수리스트
         new DefaultArrayList<Professor>()
-                .addEntity(new ProfessorBuilder()
+                .addEntity(professorBuilder
                         .setIdx(1)
                         .setName("배다슬")
                         .addSubject("server")
                         .setDepartmentByName("컴퓨터공학과")
                         .build())
-                .addEntity(new ProfessorBuilder()
+                .addEntity(professorBuilder
                         .setIdx(1)
                         .setName("이승수")
                         .addSubject("ios")
                         .setDepartmentByName("컴퓨터공학과")
                         .build())
-                .addEntity(new ProfessorBuilder()
+                .addEntity(professorBuilder
                         .setIdx(1)
                         .setName("나성수")
                         .addSubject("plan")
@@ -57,17 +62,17 @@ public class Main {
 
         // 학과리스트
         new DefaultArrayList<Department>()
-                .addEntity(new DepartmentBuilder()
+                .addEntity(departmentBuilder
                         .setIdx(1)
                         .setName("컴퓨터공학과")
                         .setDepartmentType(DepartmentType.getByName("공대"))
                         .build())
-                .addEntity(new DepartmentBuilder()
+                .addEntity(departmentBuilder
                         .setIdx(2)
                         .setName("화학공학과")
                         .setDepartmentType(DepartmentType.getByName("공대"))
                         .build())
-                .addEntity(new DepartmentBuilder()
+                .addEntity(departmentBuilder
                         .setIdx(3)
                         .setName("생명공학과")
                         .setDepartmentType(DepartmentType.getByName("공대"))
@@ -76,15 +81,15 @@ public class Main {
 
         // 학교리스트
         new DefaultArrayList<University>()
-                .addEntity(new UniversityBuilder()
+                .addEntity(universityBuilder
                         .setIdx(1)
                         .setName("성신여자대학교")
                         .build())
-                .addEntity(new UniversityBuilder()
+                .addEntity(universityBuilder
                         .setIdx(2)
                         .setName("동덕여자대학교")
                         .build())
-                .addEntity(new UniversityBuilder()
+                .addEntity(universityBuilder
                         .setIdx(3)
                         .setName("서울여자대학교")
                         .build())
